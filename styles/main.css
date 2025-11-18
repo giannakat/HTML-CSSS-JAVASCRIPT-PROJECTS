@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body{
     background-color: #f7f7f7;
     font-family: Arial, sans-serif;
@@ -172,4 +176,192 @@ h1 {
 
 .kanban-container::-webkit-scrollbar-track {
     background: #eee;
+}
+
+.add-task-card {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+
+    background: #ffffff;
+    border: 2px dashed #cccccc;
+    border-radius: 10px;
+
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.add-task-card:hover {
+    background: #f7f7f7;
+    border-color: #999;
+    color: #444;
+}
+
+
+
+
+
+
+/* ============= POP UP MODAL ============= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 350px;
+    max-width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+    position: relative;
+    animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* --- CLOSE ICON --- */
+.modal-content .close {
+    position: absolute;
+    right: 18px;
+    top: 16px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #888;
+    transition: 0.2s;
+}
+
+.modal-content .close:hover {
+    color: #333;
+}
+
+/* --- TITLES --- */
+#modalTitle {
+    margin: 0 0 20px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+}
+
+/* --- INPUT GROUPS --- */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+input[type="text"],
+input[type="date"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #7a55ff;
+    /* violet accent */
+}
+
+/* --- DESCRIPTION AREA --- */
+textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+/* --- INLINE SECTION (For → Project) --- */
+.modal-content div>label {
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.modal-content div select {
+    width: fit-content;
+    padding: 8px 10px;
+    margin-right: 10px;
+}
+
+/* --- PRIORITY BUTTONS --- */
+.priority-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.priority-options button {
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    cursor: pointer;
+    background: #f9f9f9;
+    transition: 0.2s;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.priority-options button:hover {
+    background: #eceaff;
+    border-color: #7a55ff;
+    color: #7a55ff;
+}
+
+/* --- SAVE BUTTON --- */
+#saveTaskBtn {
+    margin-top: 22px;
+    width: 100%;
+    padding: 12px;
+    background: #7a55ff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+#saveTaskBtn:hover {
+    background: #6a46e0;
+}
+
+
+.modal.hidden {
+    display: none;
 }
