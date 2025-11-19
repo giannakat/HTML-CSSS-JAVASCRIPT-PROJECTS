@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/styles/main.css" />
+    <script src="/static/js/kanban.js"></script>
+
     <title>TAMAD | Kanban Board</title>
   </head>
   <body>
@@ -25,7 +27,7 @@
     <!-- KANBAN BOARD -->
     <div class="kanban-container">
       <!-- CATEGORY BOX -->
-      <div class="column-box">
+      <div class="column-box" data-column-id="1">
         <div class="column-header">
           <span class="circle">3</span>
           <span class="column-title">To Do</span>
@@ -34,19 +36,24 @@
             <span class="more">⋮</span>
           </div>
         </div>
-        <div class="task-box">
-          <h4>Task 1</h4>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis sit
-            harum mollitia illum? Similique harum a consequuntur ipsa omnis
-            dignissimos.
+        <div class="task-box" data-task-id="101" draggable="true">
+          <div class="task-header">
+            <span class="priority high">High</span>
+            <span class="task-menu">⋮</span>
+          </div>
+          <h4 class="task-title">Task 1</h4>
+          <p class="task-description">
+            Lorem ipsum dolor, sit amet consectetur a
           </p>
+          <div class="task-footer">
+            <span class="task-date">Due: Oct 23, 2025</span>
+          </div>
         </div>
         <button class="add-task-card">+ Add Task</button>
       </div>
 
       <!-- CATEGORY BOX -->
-      <div class="column-box">
+      <div class="column-box" data-column-id="2">
         <div class="column-header">
           <span class="circle">1</span>
           <span class="column-title">To Do</span>
@@ -55,19 +62,26 @@
             <span class="more">⋮</span>
           </div>
         </div>
-        <div class="task-box">
-          <h4>Task 2</h4>
-          <p>
+        <div class="task-box" data-task-id="102" draggable="true">
+          <div class="task-header">
+            <span class="priority high">High</span>
+            <span class="task-menu">⋮</span>
+          </div>
+          <h4 class="task-title">Task 1</h4>
+          <p class="task-description">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis sit
             harum mollitia illum? Similique harum a consequuntur ipsa omnis
             dignissimos.
           </p>
+          <div class="task-footer">
+            <span class="task-date">Due: Oct 23, 2025</span>
+          </div>
         </div>
         <button class="add-task-card">+ Add Task</button>
       </div>
 
       <!-- CATEGORY BOX -->
-      <div class="column-box">
+      <div class="column-box" data-column-id="3">
         <div class="column-header">
           <span class="circle"></span>
           <span class="column-title">To Do</span>
@@ -76,19 +90,26 @@
             <span class="more">⋮</span>
           </div>
         </div>
-        <div class="task-box">
-          <h4>Task 3</h4>
-          <p>
+        <div class="task-box" data-task-id="103" draggable="true">
+          <div class="task-header">
+            <span class="priority high">High</span>
+            <span class="task-menu">⋮</span>
+          </div>
+          <h4 class="task-title">Task 1</h4>
+          <p class="task-description">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis sit
             harum mollitia illum? Similique harum a consequuntur ipsa omnis
             dignissimos.
           </p>
+          <div class="task-footer">
+            <span class="task-date">Due: Oct 23, 2025</span>
+          </div>
         </div>
         <button class="add-task-card">+ Add Task</button>
       </div>
 
       <!-- CATEGORY BOX -->
-      <div class="column-box">
+      <div class="column-box" data-column-id="4">
         <div class="column-header">
           <span class="circle"></span>
           <span class="column-title">To Do</span>
@@ -97,18 +118,25 @@
             <span class="more">⋮</span>
           </div>
         </div>
-        <div class="task-box">
-          <h4>Task 1</h4>
-          <p>
+        <div class="task-box" data-task-id="104" draggable="true">
+          <div class="task-header">
+            <span class="priority high">High</span>
+            <span class="task-menu">⋮</span>
+          </div>
+          <h4 class="task-title">Task 1</h4>
+          <p class="task-description">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis sit
             harum mollitia illum? Similique harum a consequuntur ipsa omnis
             dignissimos.
           </p>
+          <div class="task-footer">
+            <span class="task-date">Due: Oct 23, 2025</span>
+          </div>
         </div>
         <button class="add-task-card">+ Add Task</button>
       </div>
 
-      <!-- END OFKANBAN BOARD -->
+      <!-- END OF KANBAN BOARD -->
     </div>
 
     <div id="taskModal" class="modal hidden">
