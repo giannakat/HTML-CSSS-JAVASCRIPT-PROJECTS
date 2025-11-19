@@ -64,20 +64,23 @@ function handleDrop(e) {
 
 document.addEventListener("DOMContentLoaded", () => {
     const taskModal = document.getElementById("taskModal");
-    const addTaskBtn = document.getElementById("addTaskBtn");
     const closeBtn = document.querySelector(".modal .close");
 
-    // OPEN MODAL
-    addTaskBtn.addEventListener("click", () => {
-        taskModal.classList.remove("hidden");
+    const openButtons = document.querySelectorAll(".open-task-modal");
+
+    // open modal from ANY add button
+    openButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            taskModal.classList.remove("hidden");
+        });
     });
 
-    // CLOSE MODAL
+    // close modal
     closeBtn.addEventListener("click", () => {
         taskModal.classList.add("hidden");
     });
 
-    // CLOSE WHEN CLICKING OUTSIDE BOX
+    // close when clicking outside
     window.addEventListener("click", (e) => {
         if (e.target === taskModal) {
             taskModal.classList.add("hidden");
