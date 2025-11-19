@@ -60,5 +60,28 @@ function handleDrop(e) {
         this.dataset.columnId
     );
 
-    // Later → send AJAX to Django here
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const taskModal = document.getElementById("taskModal");
+    const addTaskBtn = document.getElementById("addTaskBtn");
+    const closeBtn = document.querySelector(".modal .close");
+
+    // OPEN MODAL
+    addTaskBtn.addEventListener("click", () => {
+        taskModal.classList.remove("hidden");
+    });
+
+    // CLOSE MODAL
+    closeBtn.addEventListener("click", () => {
+        taskModal.classList.add("hidden");
+    });
+
+    // CLOSE WHEN CLICKING OUTSIDE BOX
+    window.addEventListener("click", (e) => {
+        if (e.target === taskModal) {
+            taskModal.classList.add("hidden");
+        }
+    });
+});
+
